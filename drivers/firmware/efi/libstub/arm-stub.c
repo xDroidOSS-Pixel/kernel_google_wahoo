@@ -18,7 +18,10 @@
 
 #include "efistub.h"
 
-bool __nokaslr;
+bool efi__get___nokaslr(void)
+{
+	return nokaslr();
+}
 
 static int efi_secureboot_enabled(efi_system_table_t *sys_table_arg)
 {
